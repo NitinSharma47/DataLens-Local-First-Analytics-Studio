@@ -1,0 +1,57 @@
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html[data-theme="light"] { color-scheme: light; }
+html[data-theme="dark"] { color-scheme: dark; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--dl-text-primary);
+  background: var(--dl-bg-primary);
+  font-family: var(--dl-font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+button, input, select { font: inherit; }
+button { color: inherit; }
+a { color: inherit; text-decoration: none; }
+button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible, [tabindex="0"]:focus-visible {
+  outline: 2px solid var(--dl-accent-primary);
+  outline-offset: 2px;
+}
+
+::selection { color: var(--dl-text-inverse); background: var(--dl-accent-primary); }
+
+.visually-hidden, .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { border-radius: 8px; background: var(--dl-border-secondary); }
+::-webkit-scrollbar-thumb:hover { background: var(--dl-text-tertiary); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
