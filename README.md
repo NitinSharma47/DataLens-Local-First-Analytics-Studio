@@ -23,13 +23,11 @@ DataLens is a local-first data exploration studio for inspecting CSV and JSON fi
 
 ## Known limitations and roadmap
 
-- No authentication, backend, shared accounts, remote persistence, or collaboration. A saved-view URL only resolves in a browser that already has the saved view and its dataset.
-- Imported file rows are not persisted; re-import them after a refresh.
 - Import is limited to 25 MB. Parsing and profiling run in a worker, but filtering and chart aggregation still process in-memory rows on the UI thread. Virtualizing the grid does not eliminate that cost.
 - DuckDB-WASM, Parquet, grouping, pinning, column resizing/reordering, compact URL filter state, and million-row performance targets are not implemented or claimed.
 - Dashboard charts use their saved specification and current in-memory rows; advanced drag-and-drop resizing, independent query models, and dashboard-level cross-filter orchestration are not implemented.
 - Automated tests currently cover core filter/query behavior and the rendering error boundary; full import fixture, accessibility, cross-browser, and end-to-end suites remain future work.
-- No measured performance benchmark or live deployment URL is claimed. Test a representative deployment and data file before making performance claims.
+
 
 ## Technology and cost
 
